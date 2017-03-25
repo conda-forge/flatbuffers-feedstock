@@ -11,6 +11,18 @@ Summary: Memory Efficient Serialization Library
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flatbuffers-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flatbuffers-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/flatbuffers-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flatbuffers-feedstock)
+Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flatbuffers/badges/version.svg)](https://anaconda.org/conda-forge/flatbuffers)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flatbuffers/badges/downloads.svg)](https://anaconda.org/conda-forge/flatbuffers)
+
 Installing flatbuffers
 ======================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `flatbuffers` available on your pl
 ```
 conda search flatbuffers --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flatbuffers-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flatbuffers-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/flatbuffers-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flatbuffers-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flatbuffers/badges/version.svg)](https://anaconda.org/conda-forge/flatbuffers)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flatbuffers/badges/downloads.svg)](https://anaconda.org/conda-forge/flatbuffers)
 
 
 Updating flatbuffers-feedstock
