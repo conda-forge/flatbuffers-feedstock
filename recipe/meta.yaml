@@ -10,21 +10,31 @@ source:
   sha256: 768c50ebf5823f8cde81a9e38ffff115c8f5a5d031a37520d0024e7b9c6cd22e
 
 build:
-  skip: true  # [win]
-  number: 0
+  number: 1
+  skip: true  # [win and (py27 or py36)]
+  
+  features:
+    - vc10  # [win and py34]
+    - vc14  # [win and py35]
 
 requirements:
   build:
     - cmake
+    - python  # [win]
 
 test:
+  requires:
+    - python 3.4.*  # [win and py34]
+    - python 3.5.*  # [win and py35]
   commands:
-    - test -f $PREFIX/bin/flatc
-    - test -f $PREFIX/include/flatbuffers/flatbuffers.h
+    - test -f $PREFIX/bin/flatc                                                     # [not win]
+    - test -f $PREFIX/include/flatbuffers/flatbuffers.h                             # [not win]
+    - if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1                         # [win]
+    - if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1    # [win]
 
 about:
   home: http://google.github.io/flatbuffers/
-  license: Apache License 2.0
+  license: Apache 2.0
   summary: Memory Efficient Serialization Library
 
 extra:
