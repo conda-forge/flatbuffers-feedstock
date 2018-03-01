@@ -1,5 +1,5 @@
-{% set version = "1.7.1" %}
-{% set hash = "0f8dcdcfbbaba034756f97e4f9946a3784399b578f1b60c8deee3c85fafa3089" %}
+{% set version = "1.8.0" %}
+{% set hash = "c45029c0a0f1a88d416af143e34de96b3091642722aa2d8c090916c6d1498c2e" %}
 
 package:
   name: flatbuffers
