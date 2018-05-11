@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
   export MACOSX_DEPLOYMENT_TARGET=10.7
 fi
 
-cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX
+cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
 make
 ctest
 make install
