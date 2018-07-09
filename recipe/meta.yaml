@@ -11,22 +11,16 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 0
-  skip: true  # [win and (py27 or py36)]
-  
-  features:
-    - vc10  # [win and py34]
-    - vc14  # [win and py35]
+  number: 1
+  skip: true  # [win and py<35]
 
 requirements:
   build:
-    - cmake
-    - python  # [win]
+   - cmake
+   - {{ compiler('c') }}
+   - {{ compiler('cxx') }}
 
 test:
-  requires:
-    - python 3.4.*  # [win and py34]
-    - python 3.5.*  # [win and py35]
   commands:
     - test -f $PREFIX/bin/flatc                                                     # [not win]
     - test -f $PREFIX/include/flatbuffers/flatbuffers.h                             # [not win]
