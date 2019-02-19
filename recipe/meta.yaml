@@ -11,8 +11,8 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 1000
-  skip: true  # [win and py<35]
+  number: 1001
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
