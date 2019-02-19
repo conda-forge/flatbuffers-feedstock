@@ -19,6 +19,7 @@ requirements:
    - cmake
    - {{ compiler('c') }}
    - {{ compiler('cxx') }}
+   - ninja
 
 test:
   commands:
