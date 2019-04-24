@@ -1,5 +1,5 @@
-{% set version = "1.10.0" %}
-{% set hash = "3714e3db8c51e43028e10ad7adffb9a36fc4aa5b1a363c2d0c4303dd1be59a7c" %}
+{% set version = "1.11.0" %}
+{% set hash = "3f4a286642094f45b1b77228656fbd7ea123964f19502f9ecfd29933fd23a50b" %}
 
 package:
   name: flatbuffers
@@ -11,7 +11,7 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 1002
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
