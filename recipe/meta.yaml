@@ -1,18 +1,15 @@
-{% set version = "1.12.1" %}
-{% set hash = "90e6a65ff5b8e9fc225af3a9d7bf4d2e120cfe40c27dfd5527f67c0d4eb5b954" %}
+{% set version = "2.0.0" %}
 
 package:
   name: flatbuffers
   version: {{ version }}
 
 source:
-  fn: flatbuffers-{{ version }}.tar.gz
   url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz
-  sha256: {{ hash }}
+  sha256: 9ddb9031798f4f8754d00fca2f1a68ecf9d0f83dfac7239af1311e4fd9a565c4
 
 build:
   number: 0
-  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -30,7 +27,7 @@ test:
 
 about:
   home: http://google.github.io/flatbuffers/
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE.txt
   summary: Memory Efficient Serialization Library
 
