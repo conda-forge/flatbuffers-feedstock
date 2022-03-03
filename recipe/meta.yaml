@@ -22,6 +22,7 @@ test:
   commands:
     - test -f $PREFIX/bin/flatc                                                     # [not win]
     - test -f $PREFIX/include/flatbuffers/flatbuffers.h                             # [not win]
+    - test -f $PREFIX/lib/libflatbuffers${SHLIB_EXT}                                # [not win]
     - if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1                         # [win]
     - if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1    # [win]
 

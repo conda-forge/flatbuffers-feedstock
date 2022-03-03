@@ -12,16 +12,16 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
 fi
 
 cmake ${CMAKE_ARGS} \
-  -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX \
-  -DCMAKE_INSTALL_LIBDIR=lib \
   -DCMAKE_BUILD_TYPE=Release \
+  -DFLATBUFFERS_OSX_BUILD_UNIVERSAL=OFF \
+  -DFLATBUFFERS_BUILD_SHAREDLIB=ON \
   -GNinja \
   ..
 
 ninja
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-  ctest
-fi
 ninja install
-
 popd
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+  ./build-cmake/flattests
+fi
