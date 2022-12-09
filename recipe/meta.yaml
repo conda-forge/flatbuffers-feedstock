@@ -1,4 +1,4 @@
-{% set version = "22.10.25" %}
+{% set version = "22.12.06" %}
 
 package:
   name: flatbuffers
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz
-  sha256: cc9a9a29557b36313530fc60f62b0437b0b3190679f6de678a91aa436ebd0526
+  sha256: 209823306f2cbedab6ff70997e0d236fcfd1864ca9ad082cbfdb196e7386daed
 
 build:
   number: 0
