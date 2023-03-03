@@ -1,11 +1,11 @@
-About flatbuffers
-=================
+About flatbuffers-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flatbuffers-feedstock/blob/main/LICENSE.txt)
 
 Home: http://google.github.io/flatbuffers/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flatbuffers-feedstock/blob/main/LICENSE.txt)
 
 Summary: Memory Efficient Serialization Library
 
