@@ -1,4 +1,4 @@
-{% set version = "22.12.06" %}
+{% set version = "23.3.3" %}
 
 package:
   name: flatbuffers
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz
-  sha256: 209823306f2cbedab6ff70997e0d236fcfd1864ca9ad082cbfdb196e7386daed
+  sha256: 8aff985da30aaab37edf8e5b02fda33ed4cbdd962699a8e2af98fdef306f4e4d
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # SO version seems to track major version
     - {{ pin_subpackage('flatbuffers', max_pin='x') }}
