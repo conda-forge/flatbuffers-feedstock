@@ -1,4 +1,4 @@
-{% set version = "23.1.21" %}
+{% set version = "23.3.3" %}
 
 package:
   name: flatbuffers
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz
-  sha256: d84cb25686514348e615163b458ae0767001b24b42325f426fd56406fd384238
+  sha256: 8aff985da30aaab37edf8e5b02fda33ed4cbdd962699a8e2af98fdef306f4e4d
 
 build:
   number: 0
@@ -32,7 +32,7 @@ test:
 about:
   home: http://google.github.io/flatbuffers/
   license: Apache-2.0
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: Memory Efficient Serialization Library
 
 extra:
