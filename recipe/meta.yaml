@@ -9,10 +9,11 @@ source:
   sha256: 8aff985da30aaab37edf8e5b02fda33ed4cbdd962699a8e2af98fdef306f4e4d
 
 build:
-  number: 0
+  number: 1
   run_exports:
-    # SO version seems to track major version
-    - {{ pin_subpackage('flatbuffers', max_pin='x') }}
+    # SO version seems to change every patch version
+    # https://github.com/conda-forge/flatbuffers-feedstock/issues/44
+    - {{ pin_subpackage('flatbuffers', max_pin='x.x.x') }}
 
 requirements:
   build:
@@ -28,6 +29,8 @@ test:
     - test -f $PREFIX/lib/libflatbuffers${SHLIB_EXT}                                # [not win]
     - if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1                         # [win]
     - if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1    # [win]
+    # Test that the SO name tracks the patch version
+    - test -f ${PREFIX}/lib/libflatbuffers.so.{{ version }}                         # [linux]
 
 about:
   home: http://google.github.io/flatbuffers/
