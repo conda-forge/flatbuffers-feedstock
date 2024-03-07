@@ -2,6 +2,11 @@
 
 set -e
 
+if [[ "${target_platform}" == "osx-64" ]]; then
+  export CFLAGS="${CFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+  export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+
 sed -i.bak 's/-Werror //g' CMakeLists.txt
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
