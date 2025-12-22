@@ -1,0 +1,53 @@
+schema_version: 1
+
+context:
+  version: 25.12.19
+
+package:
+  name: flatbuffers
+  version: ${{ version }}
+
+source:
+  url: https://github.com/google/flatbuffers/archive/v${{ version }}.tar.gz
+  sha256: f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - ninja
+  run_exports:
+    - ${{ pin_subpackage('flatbuffers', upper_bound='x.x.x') }}
+
+tests:
+  - script:
+      - if: not win
+        then: test -f $PREFIX/bin/flatc
+      - if: not win
+        then: test -f $PREFIX/include/flatbuffers/flatbuffers.h
+      - if: not win
+        then: test -f $PREFIX/lib/libflatbuffers${SHLIB_EXT}
+      - if: win
+        then: if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1
+      - if: win
+        then: if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1
+      - if: linux
+        then: test -f ${PREFIX}/lib/libflatbuffers.so.${{ version }}
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Memory Efficient Serialization Library
+  homepage: http://google.github.io/flatbuffers/
+
+extra:
+  recipe-maintainers:
+    - wesm
+    - msarahan
+    - jakirkham
+    - xhochy
