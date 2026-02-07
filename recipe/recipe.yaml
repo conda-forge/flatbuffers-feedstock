@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 25.12.19
+  version: "25.12.19-2026-02-06-03fffb2"
 
 package:
   name: flatbuffers
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/google/flatbuffers/archive/v${{ version }}.tar.gz
-  sha256: f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a
+  sha256: ccbce58684691de1e7d51f5e87786266b37d06ab66e9dfe2d0ec106fe50aace0
 
 build:
   number: 0
@@ -27,15 +27,13 @@ requirements:
 tests:
   - script:
       - if: not win
-        then: test -f $PREFIX/bin/flatc
-      - if: not win
-        then: test -f $PREFIX/include/flatbuffers/flatbuffers.h
-      - if: not win
-        then: test -f $PREFIX/lib/libflatbuffers${SHLIB_EXT}
-      - if: win
-        then: if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1
-      - if: win
-        then: if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1
+        then:
+          - test -f $PREFIX/bin/flatc
+          - test -f $PREFIX/include/flatbuffers/flatbuffers.h
+          - test -f $PREFIX/lib/libflatbuffers${SHLIB_EXT}
+        else:
+          - if not exist %PREFIX%\\Library\\bin\\flatc.exe exit 1
+          - if not exist %PREFIX%\\Library\\include\\flatbuffers\\flatbuffers.h exit 1
       - if: linux
         then: test -f ${PREFIX}/lib/libflatbuffers.so.${{ version }}
 
